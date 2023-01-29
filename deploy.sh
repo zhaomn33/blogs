@@ -1,23 +1,19 @@
+#!/usr/bin/env sh
+
 # 确保脚本抛出遇到的错误
 set -e
 
 # 生成静态文件
-yarn build
+npm run docs:build
 
-# 进入生成的文件夹，这里是默认的路径，可以自定义
+# 进入生成的文件夹
 cd docs/.vuepress/dist
-
-# 如果是发布到自定义域名
-# echo 'www.zhaomn33.cn' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git main:<BranchName>
-git push -f git@github.com:zhaomn33/blogs.git main:blogs
+git push -f git@github.com:zhaomn33/zhao-blog.git master:gh-pages
 
 cd -
-
-# 最后发布的时候执行 bash deploy.sh
