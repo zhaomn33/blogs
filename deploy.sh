@@ -5,7 +5,7 @@ set -e
 yarn build
 
 # 进入生成的文件夹，这里是默认的路径，可以自定义
-cd .vuepress/dist
+cd docs/.vuepress/dist
 
 # 如果是发布到自定义域名
 # echo 'www.zhaomn33.cn' > CNAME
