@@ -9,6 +9,9 @@ yarn run docs:build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
+# 如果您正在部署到自定义域
+# echo 'www.example.com' > CNAME
+
 git init
 git add -A
 git commit -m 'deploy'
