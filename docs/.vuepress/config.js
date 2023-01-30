@@ -5,7 +5,7 @@ const { sideBarFilter } = require('./src/utils')
 module.exports = {
   title: 'zhaomn33',
   description: '个人博客～',
-  base: '/zhao-blog/',
+  base: '/blogs/',
   theme: 'reco',
   dest: "dist",
   themeConfig: {
