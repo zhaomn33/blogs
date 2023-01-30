@@ -29,8 +29,8 @@ jobs: # 任务
           remote_addr=`git remote get-url --push origin`
           commit_info=`git describe --all --always --long`
           user_name='zhaomn33'
-          user_email=`git log -1 --pretty=format:'%ae'`   
-          deploy_branch=blog  
+          user_email=`git log -1 --pretty=format:'%ae'`
+          deploy_branch=gh-blogs
 
           echo ${remote_addr}
           echo ${commit_info}
