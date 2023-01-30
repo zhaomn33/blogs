@@ -2,8 +2,7 @@ name: Github Action
 
 on: 
   pull_request:
-   branches:
-    - main
+   branches: [ main ]
 
 jobs: # 任务
   build: # 自定义名称
