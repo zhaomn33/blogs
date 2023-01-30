@@ -11,6 +11,10 @@ const sideBarConfig = [
       {
         title: 'css',
         folder: 'css',
+      },
+      {
+        title: 'JS',
+        folder: 'JS',
       }
     ]
   }

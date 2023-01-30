@@ -13,15 +13,14 @@ module.exports = {
     // 作者
     author: 'zhaomn',
     // 头像
-    authorAvatar: '/avatar.png',
-    sidebar: 'auto',
+    authorAvatar: '/avatar.jpg',
     subSidebar: 'auto',
     search: true,
     searchMaxSuggestions: 10,
     noFoundPageByTencent: false,
     nav: [
       ...navBarData,
-      { text: '精彩瞬间', link: '/timeline/', icon: 'reco-date' }
+      { text: '时间线', link: '/timeline/', icon: 'reco-date' }
     ],
     sidebar: sideBarFilter(sideBarConfig),
   },

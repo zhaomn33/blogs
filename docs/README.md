@@ -1,9 +1,8 @@
 ---
 home: true
 lang: zh-CN
-bgImage: 'logo.png'
+bgImage: 'back.jpeg'
 bgImageStyle: {
-  height: '60vh',
+  height: '800px',
 }
-
 ---
