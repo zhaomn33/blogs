@@ -4,14 +4,14 @@ const { sideBarFilter } = require('./src/utils')
 
 module.exports = {
   title: 'zhaomn33',
-  description: '个人博客～',
+  description: '搞完就干饭！加油～',
   base: '/blogs/',
   theme: 'reco',
   dest: "dist",
   themeConfig: {
     type: 'blog',
     // 作者
-    author: 'zhaomn',
+    author: '赵三三',
     // 头像
     authorAvatar: '/avatar.jpg',
     subSidebar: 'auto',
