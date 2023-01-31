@@ -37,7 +37,7 @@ jobs: # 任务
           echo ${deploy_branch}
 
           yarn
-          yarn build
+          yarn docs:build
           cd dist
           git config --global init.defaultBranch $deploy_branch
           git init
