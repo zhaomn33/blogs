@@ -14,6 +14,10 @@ module.exports = {
     author: '赵三三',
     // 头像
     authorAvatar: '/avatar.jpg',
+    // 移动端优化
+    head: [
+      ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+    ],
     subSidebar: 'auto',
     search: true,
     searchMaxSuggestions: 10,

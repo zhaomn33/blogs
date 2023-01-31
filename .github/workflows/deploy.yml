@@ -1,8 +1,9 @@
 name: Github Action
 
 on: 
-  pull_request:
-   branches: [ main ]
+  push:
+    branches:
+      - master
 
 jobs: # 任务
   build: # 自定义名称
@@ -10,7 +11,7 @@ jobs: # 任务
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
     steps:  # 指定每个job的运行步骤。可以包含一个或多个步骤
       - name: Checkout  # 步骤1
