@@ -1,9 +1,9 @@
 name: Github Action
 
-on: 
+on:
   push:
     branches:
-      - master
+      - main
 
 jobs: # 任务
   build: # 自定义名称
