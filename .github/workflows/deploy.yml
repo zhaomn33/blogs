@@ -58,4 +58,4 @@ jobs: # 任务
           git remote add origin ${remote_addr}
           echo '----推送push-----'
           git push origin HEAD:$deploy_branch --force # 推送到github $deploy_branch分支
-          echo '----最后成功-----'
+          echo '----成功-----'
