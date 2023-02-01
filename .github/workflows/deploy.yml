@@ -51,8 +51,6 @@ jobs: # 任务
           git add -A
           git commit -m "auto deploy, $commit_info"
           remote_addr=`echo $remote_addr | awk -F'://' '{print $2}'`
-          echo '----secrets----'
-          echo ${{secrets.BLOG_TOKEN}}
           remote_addr=https://${user_name}:${{secrets.BLOG_TOKEN}}@${remote_addr}
           echo '----打印remote_addr----'
           echo ${remote_addr}
