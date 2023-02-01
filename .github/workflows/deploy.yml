@@ -52,10 +52,10 @@ jobs: # 任务
           git commit -m "auto deploy, $commit_info"
           remote_addr=`echo $remote_addr | awk -F'://' '{print $2}'`
           remote_addr=https://${user_name}:${{secrets.BLOG_TOKEN}}@${remote_addr}
-          echo '打印remote_addr----'
+          echo '----打印remote_addr----'
           echo ${remote_addr}
-          echo 'aaaa----'
+          echo '----add origin----'
           git remote add origin ${remote_addr}
-          echo '推送-----'
+          echo '----推送push-----'
           git push origin HEAD:$deploy_branch --force # 推送到github $deploy_branch分支
-          echo '最后-----'
+          echo '----最后-----'
