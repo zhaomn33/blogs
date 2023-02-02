@@ -17,6 +17,15 @@ const sideBarConfig = [
         folder: 'JS',
       }
     ]
+  },
+  {
+    curryUri: '/handbook/notes',
+    sideBarInfo: [
+      {
+        title: 'blog-deploy',
+        folder: 'blog-deploy',
+      }
+    ]
   }
 ]
 

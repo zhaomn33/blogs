@@ -8,6 +8,11 @@ const navBarData = [
     text: '基础',
     link: '/handbook/base/css/1.html',
     icon: 'reco-blog'
+  },
+  {
+    text: '笔记',
+    link: '/handbook/notes/blog-deploy/blog搭建.html',
+    icon: 'reco-blog'
   }
 ]
 
