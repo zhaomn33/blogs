@@ -15,7 +15,7 @@ blog搭建完成后，下一步则实现自动部署，无须再手动拖动文�
 :::
 
 ## 一、配置yml文件
-- 在mian分支下，在根目录新建 .github/workflows 文件夹，新建一个deploy.yml文件，文件名可任取<br>
+- 在main分支下，在根目录新建 .github/workflows 文件夹，新建一个deploy.yml文件，文件名可任取<br>
 此为文件内容：
 ```yml
 name: Github Action
