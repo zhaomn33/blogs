@@ -28,8 +28,8 @@ jobs: # 任务
           echo '获取仓库基本信息'
           remote_addr=`git remote get-url --push origin`
           commit_info=`git describe --all --always --long`
-          user_name='leezozz'
-          user_email=`git log -1 --pretty=format:'%ae'`   
+          user_name='zhaomn33'
+          user_email=`git log -1 --pretty=format:'%ae'`
           deploy_branch=gh-blogs
 
           echo ${remote_addr}
