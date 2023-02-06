@@ -37,8 +37,8 @@ jobs: # 任务
           echo ${deploy_branch}
 
           yarn
-          yarn docs:build
-          cd dist
+          yarn docs:build # 是 package.json 内 script 运行打包
+          cd dist # 进入打包好的文件内
           git config --global init.defaultBranch $deploy_branch
           git init
           echo ${user_name}

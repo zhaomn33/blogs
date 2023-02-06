@@ -21,11 +21,11 @@ blog搭建完成后，下一步则实现自动部署，无须再手动拖动文�
 name: Github Action
 
 on:
-  push: # 在什么时候运行
-    branches:
-      - main
+  push:
+   branches:
+    - main
 
-jobs: # 任务 
+jobs: # 任务
   build: # 自定义名称
     runs-on: ubuntu-latest
 
@@ -40,7 +40,7 @@ jobs: # 任务
       - name: Use Node.js ${{ matrix.node-version }} # 步骤2
         uses: actions/setup-node@v1 # 作用：安装nodejs
         with:
-          node-version: ${{ matrix.node-version }} # node版本
+          node-version: ${{ matrix.node-version }} # 版本
 
       - name: Build and Deploy # 步骤3
         # 构建和部署
@@ -48,19 +48,17 @@ jobs: # 任务
           echo '获取仓库基本信息'
           remote_addr=`git remote get-url --push origin`
           commit_info=`git describe --all --always --long`
-          user_name='zhaomn33'
-          user_email=`git log -1 --pretty=format:'%ae'`
+          user_name='leezozz'
+          user_email=`git log -1 --pretty=format:'%ae'`   
           deploy_branch=blogs
 
           echo ${remote_addr}
           echo ${commit_info}
           echo ${deploy_branch}
 
-        # yarn build 是 package.json 内 script 运行打包
-        # cd dist 进入打包好的文件内
           yarn
-          yarn build
-          cd dist
+          yarn build # 是 package.json 内 script 运行打包
+          cd dist # 进入打包好的文件内
           git config --global init.defaultBranch $deploy_branch
           git init
           echo ${user_name}
@@ -73,14 +71,10 @@ jobs: # 任务
           git add -A
           git commit -m "auto deploy, $commit_info"
           remote_addr=`echo $remote_addr | awk -F'://' '{print $2}'`
-          remote_addr=https://${user_name}:${{secrets.BLOG_TOKEN}}@${remote_addr}
-          echo '----打印remote_addr----'
+          remote_addr=https://${user_name}:${{secrets.TEST_BLOG_SECRET}}@${remote_addr}
           echo ${remote_addr}
-          echo '----add origin----'
           git remote add origin ${remote_addr}
-          echo '----推送push-----'
           git push origin HEAD:$deploy_branch --force # 推送到github $deploy_branch分支
-          echo '----成功-----'
 ```
 ## 二、创建token
 - 1、在GitHub主页面，进入 Settings -> Developer settings -> Personal access tokens，新建一个token<br>
