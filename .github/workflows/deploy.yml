@@ -36,6 +36,8 @@ jobs: # 任务
           echo ${commit_info}
           echo ${deploy_branch}
 
+        # docs:build 是 package.json 内 script 运行打包
+        # cd dist 进入打包好的文件内
           yarn
           yarn docs:build
           cd dist

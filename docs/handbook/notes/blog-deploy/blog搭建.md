@@ -1,13 +1,13 @@
 ---
 title: 1、blog搭建
-author: zhao
+author: 赵三三
 date: '2023-2-2'
 sidebar: auto
 sticky: 1
 tags:
  - 笔记
 categories:
- - 笔记
+ - blog
 ---
 
 ::: tip  描述
@@ -16,7 +16,7 @@ GitHub内搭建个人博客的详细步骤
 
 ## 一、新建一个GitHub仓库
 - 点击New repository
-<!-- ! + [图片描述 ] + (图片的url 【可以是网络地址、本地地址】) -->
+<!-- 图片添加： ! + [图片描述 ] + (图片的url 【可以是网络地址、本地地址】) -->
 ![新建一个GitHub仓库](../../../.vuepress/public/imgs/create-github.png)
 
 ## 二、克隆项目并初始化
@@ -36,6 +36,7 @@ GitHub内搭建个人博客的详细步骤
 ## 三、向GitHub推送项目并部署
 ### 推送
 - 1、.vuepress/config.js （相应配置可自行查询vuepress官网修改）
+<!-- 链接添加： [描述 ] + (url) -->
 [https://vuepress.vuejs.org/config/#overview](https://vuepress.vuejs.org/config/#overview)
 ```
 module.exports = {
@@ -57,5 +58,5 @@ GitHub pages 必须要有index.html，由于vuepress是Markdown语法，没有ht
 并将生成的 **dist文件夹内** 的所有内容复制到新建的分支上
 此时新分支状态：
 ![blogbranch](../../../.vuepress/public/imgs/blogbranch.png)
-- 4、将 Settings > Pages > Branch 下的分支改为 blogs 下，不断save刷新，可能有缓存，此时应该已经部署好了
+- 4、将 Settings -> Pages -> Branch 下的分支改为 blogs 下，不断save刷新，可能有缓存，此时应该已经部署好了
 ![success](../../../.vuepress/public/imgs/success.png)
