@@ -93,3 +93,4 @@ jobs: # 任务
 此时 Repository secrets 下已经有了刚刚创建的secret<br>
 之后可以在yml文件内直接使用 secrets.TEST_BLOG_SECRET（secrets.secret名称）
 ![secret](../../../.vuepress/public/imgs/secret.png)
+- 5、此时重新推送代码，可实现自动部署。
