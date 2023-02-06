@@ -21,7 +21,7 @@ jobs: # 任务
         uses: actions/setup-node@v3 # 作用：安装nodejs
         with:
           node-version: ${{ matrix.node-version }} # node版本
-          cache: 'yarn'
+          cache: yarn
 
       - name: Build and Deploy # 步骤3
         # 构建和部署
