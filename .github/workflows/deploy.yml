@@ -1,9 +1,9 @@
 name: Github Action
 
 on:
-  push: # 在什么时候运行
-    branches:
-      - main
+  push:
+   branches:
+    - main
 
 jobs: # 任务
   build: # 自定义名称
@@ -28,16 +28,14 @@ jobs: # 任务
           echo '获取仓库基本信息'
           remote_addr=`git remote get-url --push origin`
           commit_info=`git describe --all --always --long`
-          user_name='zhaomn33'
-          user_email=`git log -1 --pretty=format:'%ae'`
+          user_name='leezozz'
+          user_email=`git log -1 --pretty=format:'%ae'`   
           deploy_branch=gh-blogs
 
           echo ${remote_addr}
           echo ${commit_info}
           echo ${deploy_branch}
 
-        # docs:build 是 package.json 内 script 运行打包
-        # cd dist 进入打包好的文件内
           yarn
           yarn docs:build
           cd dist
@@ -54,10 +52,6 @@ jobs: # 任务
           git commit -m "auto deploy, $commit_info"
           remote_addr=`echo $remote_addr | awk -F'://' '{print $2}'`
           remote_addr=https://${user_name}:${{secrets.BLOG_TOKEN}}@${remote_addr}
-          echo '----打印remote_addr----'
           echo ${remote_addr}
-          echo '----add origin----'
           git remote add origin ${remote_addr}
-          echo '----推送push-----'
           git push origin HEAD:$deploy_branch --force # 推送到github $deploy_branch分支
-          echo '----成功-----'
