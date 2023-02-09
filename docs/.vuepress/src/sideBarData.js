@@ -26,6 +26,15 @@ const sideBarConfig = [
         folder: 'blog-deploy',
       }
     ]
+  },
+  {
+    curryUri: '/handbook/vue',
+    sideBarInfo: [
+      {
+        title: 'slot',
+        folder: 'slot',
+      }
+    ]
   }
 ]
 

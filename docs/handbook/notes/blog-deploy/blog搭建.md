@@ -5,9 +5,9 @@ date: '2023-2-2'
 sidebar: auto
 sticky: 1
 tags:
- - 笔记
-categories:
  - blog
+categories:
+ - 笔记
 ---
 
 ::: tip  描述

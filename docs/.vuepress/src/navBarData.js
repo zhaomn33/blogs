@@ -10,6 +10,11 @@ const navBarData = [
     icon: 'reco-blog'
   },
   {
+    text: 'Vue',
+    link: '/handbook/vue/slot/slot插槽.html',
+    icon: 'reco-blog'
+  },
+  {
     text: '笔记',
     link: '/handbook/notes/blog-deploy/blog搭建.html',
     icon: 'reco-blog'
