@@ -12,6 +12,7 @@ module.exports = {
     type: 'blog',
     // 作者
     author: '赵三三',
+    logo: '/logo.png',
     // 头像
     authorAvatar: '/avatar.jpg',
     // 移动端优化
@@ -24,7 +25,8 @@ module.exports = {
     noFoundPageByTencent: false,
     nav: [
       ...navBarData,
-      { text: '时间线', link: '/timeline/', icon: 'reco-date' }
+      { text: '时间线', link: '/timeline/', icon: 'reco-date' },
+      { text: 'GitHub', link: 'https://github.com/zhaomn33', icon: 'reco-github' },
     ],
     sidebar: sideBarFilter(sideBarConfig),
   },
