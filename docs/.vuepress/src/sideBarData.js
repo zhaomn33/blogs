@@ -9,7 +9,7 @@ const sideBarConfig = [
     curryUri: '/handbook/base',
     sideBarInfo: [
       {
-        title: 'css',
+        title: 'CSS',
         folder: 'css',
       },
       {
@@ -22,7 +22,7 @@ const sideBarConfig = [
     curryUri: '/handbook/notes',
     sideBarInfo: [
       {
-        title: 'blog-deploy',
+        title: '博客搭建',
         folder: 'blog-deploy',
       }
     ]
@@ -31,8 +31,8 @@ const sideBarConfig = [
     curryUri: '/handbook/vue',
     sideBarInfo: [
       {
-        title: 'slot',
-        folder: 'slot',
+        title: '内置内容',
+        folder: 'builtInContent',
       }
     ]
   }

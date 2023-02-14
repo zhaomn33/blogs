@@ -11,7 +11,7 @@ const navBarData = [
   },
   {
     text: 'Vue',
-    link: '/handbook/vue/slot/slot插槽.html',
+    link: '/handbook/vue/builtInContent/slot插槽.html',
     icon: 'reco-blog'
   },
   {

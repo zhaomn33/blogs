@@ -14,6 +14,11 @@
   },
   "devDependencies": {
     "vuepress": "^1.9.8",
+    "vuepress-plugin-cursor-effects": "^1.1.6",
     "vuepress-theme-reco": "^1.6.16"
+  },
+  "dependencies": {
+    "@vuepress-reco/vuepress-plugin-back-to-top": "^1.6.13",
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5"
   }
 }

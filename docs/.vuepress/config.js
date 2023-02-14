@@ -39,4 +39,32 @@ module.exports = {
       lang: 'zh-CN'
     }
   },
+  plugins: [
+    [
+      'cursor-effects',
+      {
+        size: 2, // size of the particle, default: 2
+        shape: 'circle', // ['star' | 'circle'], // shape of the particle, default: 'star'
+        zIndex: 999999999, // z-index property of the canvas, default: 999999999
+      }
+    ],
+    [
+      '@vuepress-reco/vuepress-plugin-kan-ban-niang',
+      {
+        theme: ['whiteCat', 'haru2', 'blackCat', 'z16'],
+        width: 200,
+        height: 300,
+        messages:{
+          welcome: '欢迎来到我的博客~',
+          home: '心里的花，我想要带你回家。',
+          theme: '你想要找我其他的小伙伴么',
+          close: '一会儿再见吧～'
+        },
+        clean: false
+      }
+    ],
+    [
+      '@vuepress-reco/vuepress-plugin-back-to-top'
+    ]
+  ]
 }
