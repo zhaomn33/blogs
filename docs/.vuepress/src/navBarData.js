@@ -11,12 +11,12 @@ const navBarData = [
   },
   {
     text: 'Vue',
-    link: '/handbook/vue/builtInContent/slot插槽.html',
+    link: '/handbook/vue/builtInContent/1_slot插槽.html',
     icon: 'reco-blog'
   },
   {
     text: '笔记',
-    link: '/handbook/notes/blog-deploy/blog搭建.html',
+    link: '/handbook/notes/blog-deploy/1_blog搭建.html',
     icon: 'reco-blog'
   }
 ]
