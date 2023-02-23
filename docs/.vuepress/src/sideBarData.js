@@ -31,7 +31,7 @@ const sideBarConfig = [
     curryUri: '/handbook/vue',
     sideBarInfo: [
       {
-        title: '内置内容',
+        title: '内置特殊元素',
         folder: 'builtInContent',
       }
     ]

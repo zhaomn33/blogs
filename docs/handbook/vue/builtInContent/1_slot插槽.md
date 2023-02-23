@@ -28,7 +28,7 @@ categories:
 需要template元素：`<template v-slot:names />`或`<template #names />`（ #：v-slot简称 ）
 - 4. 动态插槽<br>
 `<template v-slot:[slotName] />`
-### 透析<br>
+### 透析（作用域插槽）<br>
 - 1. 默认插槽透析子组件的data作用域<br>
 ```
 <SlotName v-slot="slotProps">{{ slotProps.propName }}</SlotName> // 父组件内引入的子组件
@@ -39,3 +39,6 @@ categories:
 ```
 <template v-slot:names=“slotProps”>{{ slotProps.dataName }}</template>
 ```
+### 无渲染组件<br>
+一些组件只包含了逻辑，而不需要自己渲染内容，视图输出通过作用域插槽完全交给了消费者组件，这些组件称为**无渲染组件**<br>
+[vue官网实例](https://cn.vuejs.org/guide/components/slots.html#scoped-slots)
