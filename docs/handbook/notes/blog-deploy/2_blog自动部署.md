@@ -3,7 +3,7 @@ title: 2、blog自动部署
 author: 赵三三
 date: '2023-2-2'
 sidebar: auto
-sticky: 1
+# sticky: 1
 tags:
  - blog
 categories:
