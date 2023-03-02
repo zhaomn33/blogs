@@ -286,7 +286,7 @@ oDiv1.onclick = obj2.bind(oDiv,1,2)(); // 绑定时传参
 oDiv1.onclick = obj2.bind(oDiv)(1,2);  // 调用时传参
 oDiv1.onclick = obj2.bind(oDiv,1)(2);  // 分别传参
 ```
-
+- 三者对比使用
 ```
 var obj = {
   x: 81,
