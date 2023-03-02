@@ -43,7 +43,7 @@ var person = {
 - 在HTML事件句柄中，`this`指向了接收事件的 HTML元素，例：
 ```
 <button onclick="this.style.display='none'">
-点我后我就消失了
+  点我后我就消失了
 </button>
 ```
 
@@ -103,7 +103,7 @@ setTimeout(function(){
 var obj = {
   name : "zhar",
   say : function(){
-    console.log(this.name);//zhar
+    console.log(this.name); // zhar
   }
 }
 obj.say()
@@ -131,7 +131,7 @@ var obj = {
     }
   }
 }
-obj.say()();//输出 ： tom
+obj.say()(); // 输出 ： tom
 ```
 
 ### 3、构造函数环境
@@ -170,7 +170,7 @@ function Person() {
   return 1;//number string boolean 等
 }
 var p = new Person();
-console.log(p.name);//zhar
+console.log(p.name); // zhar
 ```
 
 ### 4、事件对象
@@ -183,6 +183,14 @@ li.onclick = function(){
 ```
 
 ## 三、修改this指向
+
+::: tip
+call、apply、bind，三者作用一致，使用方法不同<br>
+1、都是改变函数的this指向<br>
+2、第一个参数都是this要指向的对象，也就是想要指向的上下文<br>
+3、都可以利用后续参数传餐<br>
+4、bind是返回对应函数，便于稍后调用；apply和call是立即调用<br>
+:::
 
 ### 1、用局部变量代替this指针
 
@@ -203,3 +211,67 @@ obj.say(); // zhar11
 ### 2、call方法
 
 - `call`是函数调用的一种形式，可以通过 `函数名.call` 来调用函数
+-  语法：call（ theObj [，arg1[，arg2...[，argN]]] ），[ ] 代表可不写<br>
+theObj：this想要指向的对象<br>
+arg：传递的参数（ string ），不限，参数由逗号分开<br>
+例：obj.myFun.call(db,'成都','上海')；<br>
+
+```
+var name = 'zhar';
+function say(){
+  console.log(this.name);
+};
+say(); // zhar   // this指向暂未改变
+var obj = {
+  name : 'tom',
+  say : function(){
+    console.log(this.name);
+  }
+}
+say.call(obj); // tom    // 将 say 函数中的 this 替换为传入的对象
+obj.say(); // tom
+obj.say.call(null); // zhar   // 将 obj.say 函数的 this 替换为了 null，也就意味着指向了全局环境
+```
+
+### 3、apply方法
+
+- `apply`是函数调用的一种形式，可以通过 `函数名.apply` 来调用函数
+-  语法：apply（ theObj [，argArray] ），[ ] 代表可不写<br>
+theObj：this想要指向的对象<br>
+argArray：传递的参数（ Array ），一整个数组传餐<br>
+例：obj.myFun.call(db,['成都','上海'])；<br>
+
+```
+// apply 的传参
+function say(arg1,arg2){
+  console.log(this.name,arg1,arg2);
+};
+var obj = {
+  name : 'tom',
+  say : function(){
+    console.log(this.name);
+  }
+}
+say.apply(obj,['one','two']); // tom one two
+```
+
+### 4、bind方法
+
+- bind方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时**传入bind方法的第一个参数作为this**，传入bind方法的**第二个及以后的参数，加上绑定函数运行时本身的参数**，按照顺序作为原函数的参数来调用原函数。
+- 注意：bind的返回值是函数
+
+```
+var obj = {
+    x: 81,
+};
+ 
+var foo = {
+    getX: function() {
+        return this.x;
+    }
+}
+ 
+console.log(foo.getX.bind(obj)( ));  //81
+console.log(foo.getX.call(obj));    //81
+console.log(foo.getX.apply(obj));   //81
+```
