@@ -213,14 +213,14 @@ obj.say(); // zhar11
 
 - `call`是函数调用的一种形式，可以通过 `函数名.call` 来调用函数
 -  语法：`call（ theObj [，arg1[，arg2...[，argN]]] ）`，[ ] 代表可不写<br>
-**·** theObj：this想要指向的对象<br>
-**·** arg：传递的参数，不限，参数由逗号分开<br>
-**·** 例：obj.myFun.call(db,'成都','上海')； // 参数为列表<br>
+   - theObj：this想要指向的对象<br>
+   - arg：传递的参数，不限，参数由逗号分开<br>
+   - 例：obj.myFun.call(db,'成都','上海')； // 参数为列表<br>
 - theObj 传值情况：<br>
-**·** 不传，或者传递null/undefined，函数中的this指向window对象<br>
-**·** 传递另一个函数的函数名，this指向这个函数的引用<br>
-**·** 传递字符串、数值 或布尔类型等 基础类型，this指向其对应的包装对象，如String、Number、Boolean<br>
-**·** 传递一个对象，this指向这个对象<br>
+   - 不传，或者传递null/undefined，函数中的this指向window对象<br>
+   - 传递另一个函数的函数名，this指向这个函数的引用<br>
+   - 传递字符串、数值 或布尔类型等 基础类型，this指向其对应的包装对象，如String、Number、Boolean<br>
+   - 传递一个对象，this指向这个对象<br>
 
 ```
 var name = 'zhar';
@@ -243,9 +243,9 @@ obj.say.call(null); // zhar   // 将 obj.say 函数的 this 替换为了 null，
 
 - `apply`是函数调用的一种形式，可以通过 `函数名.apply` 来调用函数
 -  语法：`apply（ theObj [，argArray] ）`，[ ] 代表可不写<br>
-**·** theObj：this想要指向的对象<br>
-**·** argArray：传递的参数（ Array ），数组传参<br>
-**·** 例：obj.myFun.call(db,['成都','上海'])；<br>
+   - theObj：this想要指向的对象<br>
+   - argArray：传递的参数（ Array ），数组传参<br>
+   - 例：obj.myFun.call(db,['成都','上海'])；<br>
 
 ```
 // apply 的传参
