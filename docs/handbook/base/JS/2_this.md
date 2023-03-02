@@ -190,6 +190,7 @@ call、apply、bind，三者作用一致，使用方法不同<br>
 2、第一个参数都是this要指向的对象，也就是想要指向的上下文<br>
 3、都可以利用后续参数传餐<br>
 4、bind是返回对应函数，便于稍后调用；apply和call是立即调用<br>
+5、三者的参数不限定是string类型，允许是各种类型，包括函数、object等
 :::
 
 ### 1、用局部变量代替this指针
@@ -211,16 +212,21 @@ obj.say(); // zhar11
 ### 2、call方法
 
 - `call`是函数调用的一种形式，可以通过 `函数名.call` 来调用函数
--  语法：call（ theObj [，arg1[，arg2...[，argN]]] ），[ ] 代表可不写<br>
-theObj：this想要指向的对象<br>
-arg：传递的参数（ string ），不限，参数由逗号分开<br>
-例：obj.myFun.call(db,'成都','上海')；<br>
+-  语法：`call（ theObj [，arg1[，arg2...[，argN]]] ）`，[ ] 代表可不写<br>
+**·** theObj：this想要指向的对象<br>
+**·** arg：传递的参数，不限，参数由逗号分开<br>
+**·** 例：obj.myFun.call(db,'成都','上海')； // 参数为列表<br>
+- theObj 传值情况：<br>
+**·** 不传，或者传递null/undefined，函数中的this指向window对象<br>
+**·** 传递另一个函数的函数名，this指向这个函数的引用<br>
+**·** 传递字符串、数值 或布尔类型等 基础类型，this指向其对应的包装对象，如String、Number、Boolean<br>
+**·** 传递一个对象，this指向这个对象<br>
 
 ```
 var name = 'zhar';
 function say(){
   console.log(this.name);
-};
+}
 say(); // zhar   // this指向暂未改变
 var obj = {
   name : 'tom',
@@ -236,16 +242,16 @@ obj.say.call(null); // zhar   // 将 obj.say 函数的 this 替换为了 null，
 ### 3、apply方法
 
 - `apply`是函数调用的一种形式，可以通过 `函数名.apply` 来调用函数
--  语法：apply（ theObj [，argArray] ），[ ] 代表可不写<br>
-theObj：this想要指向的对象<br>
-argArray：传递的参数（ Array ），一整个数组传餐<br>
-例：obj.myFun.call(db,['成都','上海'])；<br>
+-  语法：`apply（ theObj [，argArray] ）`，[ ] 代表可不写<br>
+**·** theObj：this想要指向的对象<br>
+**·** argArray：传递的参数（ Array ），数组传参<br>
+**·** 例：obj.myFun.call(db,['成都','上海'])；<br>
 
 ```
 // apply 的传参
 function say(arg1,arg2){
   console.log(this.name,arg1,arg2);
-};
+}
 var obj = {
   name : 'tom',
   say : function(){
@@ -257,21 +263,40 @@ say.apply(obj,['one','two']); // tom one two
 
 ### 4、bind方法
 
-- bind方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时**传入bind方法的第一个参数作为this**，传入bind方法的**第二个及以后的参数，加上绑定函数运行时本身的参数**，按照顺序作为原函数的参数来调用原函数。
-- 注意：bind的返回值是函数
+- `bind`方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时**传入bind方法的第一个参数作为this**，传入`bind`方法的**第二个及以后的参数，加上绑定函数运行时本身的参数**，按照顺序作为原函数的参数来调用原函数。
+- 注意：`bind`的返回值是函数
+```
+var bar = function(){
+  console.log(this.x);
+}
+var foo = {
+  x : 3
+}
+bar(); // undefined
+var func = bar.bind(foo);
+func(); // 3
+```
+- 传参时间：绑定时，或调用时
+```
+function obj2(x,y){
+  this.style.background = "yellow";
+  console.log(x+y)
+}
+oDiv1.onclick = obj2.bind(oDiv,1,2)(); // 绑定时传参
+oDiv1.onclick = obj2.bind(oDiv)(1,2);  // 调用时传参
+oDiv1.onclick = obj2.bind(oDiv,1)(2);  // 分别传参
+```
 
 ```
 var obj = {
-    x: 81,
-};
- 
-var foo = {
-    getX: function() {
-        return this.x;
-    }
+  x: 81,
 }
- 
-console.log(foo.getX.bind(obj)( ));  //81
-console.log(foo.getX.call(obj));    //81
-console.log(foo.getX.apply(obj));   //81
+var foo = {
+  getX: function() {
+    return this.x;
+  }
+}
+console.log(foo.getX.bind(obj)());  // 81  // bind方法需要函数调用
+console.log(foo.getX.call(obj));    // 81
+console.log(foo.getX.apply(obj));   // 81
 ```
