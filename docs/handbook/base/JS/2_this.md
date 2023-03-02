@@ -23,7 +23,7 @@ var person = {
   fullName : function() {
     return this.firstName + " " + this.lastName;
   }
-  //  this.firstName 表示 this (person) 对象的 firstName 属性
+  // this.firstName 表示 this (person) 对象的 firstName 属性
 }
 ```
 
@@ -167,7 +167,7 @@ console.log(p.name); // tom
 ```
 function Person() {
   this.name = 'zhar';
-  return 1;//number string boolean 等
+  return 1; // number string boolean 等
 }
 var p = new Person();
 console.log(p.name); // zhar
