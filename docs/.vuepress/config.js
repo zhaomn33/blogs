@@ -40,15 +40,15 @@ module.exports = {
     }
   },
   plugins: [
-    [
-      'cursor-effects',
-      {
-        size: 2, // size of the particle, default: 2
-        shape: 'circle', // ['star' | 'circle'], // shape of the particle, default: 'star'
-        zIndex: 999999999, // z-index property of the canvas, default: 999999999
-      }
-    ],
-    [
+    // [ // 鼠标点击-撒花～
+    //   'cursor-effects',
+    //   {
+    //     size: 2, // size of the particle, default: 2
+    //     shape: 'circle', // ['star' | 'circle'], // shape of the particle, default: 'star'
+    //     zIndex: 999999999, // z-index property of the canvas, default: 999999999
+    //   }
+    // ],
+    [ // 看板娘配置
       '@vuepress-reco/vuepress-plugin-kan-ban-niang',
       {
         theme: ['whiteCat', 'haru2', 'blackCat', 'z16'],
@@ -63,7 +63,7 @@ module.exports = {
         clean: false
       }
     ],
-    [
+    [ // 回到顶部
       '@vuepress-reco/vuepress-plugin-back-to-top'
     ]
   ]

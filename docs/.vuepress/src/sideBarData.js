@@ -33,6 +33,10 @@ const sideBarConfig = [
       {
         title: '内置特殊元素',
         folder: 'builtInContent',
+      },
+      {
+        title: '随手笔记',
+        folder: 'newNotes',
       }
     ]
   }
