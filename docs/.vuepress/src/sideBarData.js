@@ -24,6 +24,10 @@ const sideBarConfig = [
       {
         title: '博客搭建',
         folder: 'blog-deploy',
+      },
+      {
+        title: 'JS',
+        folder: 'JS',
       }
     ]
   },
