@@ -43,6 +43,15 @@ const sideBarConfig = [
         folder: 'newNotes',
       }
     ]
+  },
+  {
+    curryUri: '/handbook/react',
+    sideBarInfo: [
+      {
+        title: '基础',
+        folder: 'base',
+      }
+    ]
   }
 ]
 

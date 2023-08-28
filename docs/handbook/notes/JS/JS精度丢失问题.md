@@ -3,11 +3,10 @@ title: js精度丢失
 author: 赵三三
 date: '2023-6-26'
 sidebar: auto
-sticky: 1
 tags:
- - js
+ - JS
 categories:
- - js
+ - JS
 ---
 
 ### 精度丢失原因
