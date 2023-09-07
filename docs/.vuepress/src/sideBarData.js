@@ -52,6 +52,15 @@ const sideBarConfig = [
         folder: 'base',
       }
     ]
+  },
+  {
+    curryUri: '/handbook/flutter',
+    sideBarInfo: [
+      {
+        title: '笔记',
+        folder: 'notes',
+      }
+    ]
   }
 ]
 

@@ -20,6 +20,11 @@ const navBarData = [
     icon: 'reco-blog'
   },
   {
+    text: 'Flutter',
+    link: '/handbook/flutter/notes/1_环境搭建.html',
+    icon: 'reco-blog'
+  },
+  {
     text: '笔记',
     link: '/handbook/notes/blog-deploy/1_blog搭建.html',
     icon: 'reco-blog'
