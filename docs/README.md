@@ -1,8 +1,9 @@
 ---
 home: true
 lang: zh-CN
-bgImage: 'back.jpeg'
+bgImage: 'back.jpg'
+# background: "cover"
 bgImageStyle: {
-  height: '800px',
+  height: '1300px',
 }
 ---
