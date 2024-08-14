@@ -7,5 +7,5 @@ bgImageStyle: {
 isShowTitleInHome: false
 features:
 - title: Today
-  details: happy~
+  details: happy~~
 ---
